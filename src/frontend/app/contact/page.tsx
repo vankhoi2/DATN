@@ -7,11 +7,7 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="breadcrumb" style={{marginTop: 16}}>
-        <Link href="./">Trang chủ</Link> / <Link href="/contact">Liên hệ</Link>
-      </div>
-
+      
       {/* Contact Section */}
       <section className="contact-section">
         <div className="contact-info">

@@ -27,6 +27,7 @@ const Header = () => {
       closeBtn?.removeEventListener('click', closeMenu);
       menuOverlay?.removeEventListener('click', closeMenu);
     };
+    
   }, []);
 
   return (

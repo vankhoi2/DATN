@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect } from "react";
 import Link from "next/link";
 
@@ -13,6 +14,7 @@ const Header = () => {
       mobileMenu?.classList.add('open');
       menuOverlay?.classList.add('open');
     }
+
     function closeMenu() {
       mobileMenu?.classList.remove('open');
       menuOverlay?.classList.remove('open');
@@ -45,20 +47,29 @@ const Header = () => {
                 <button className="icon-search"><i className="fas fa-search"></i></button>
               </div>
               <div className="nav-top">
-                <a href=""><i className="fas fa-file-alt"></i><p>Đơn hàng </p></a>
-                <a href=""><i className="fas fa-heart"></i><p>Yêu thích </p></a>
-                <a href=""><i className="fas fa-user"></i><p>Tài khoản </p></a>
-                <a href="" className="cart"><i className="fas fa-shopping-cart"></i><p>Giỏ hàng </p><span className="badge">3</span></a>
+                <a href="#"><i className="fas fa-file-alt"></i><p>Đơn hàng</p></a>
+                <a href="#"><i className="fas fa-heart"></i><p>Yêu thích</p></a>
+                <Link href="/login">
+                  <div className="account-link">
+                    <i className="fas fa-user"></i>
+                    <p>Tài khoản</p>
+                  </div>
+                </Link>
+                <a href="#" className="cart">
+                  <i className="fas fa-shopping-cart"></i>
+                  <p>Giỏ hàng</p>
+                  <span className="badge">3</span>
+                </a>
               </div>
             </div>
             <div className="nav-bottom">
               <a href="./">Trang chủ</a>
-              <a href="">Giới thiệu</a>
-              <a href="">Sản phẩm </a>
-              <a href="">Tin tức </a>
-              <a href="">Hàng mới </a>
+              <a href="#">Giới thiệu</a>
+              <a href="#">Sản phẩm</a>
+              <a href="#">Tin tức</a>
+              <a href="#">Hàng mới</a>
               <Link href="/contact">Liên hệ</Link>
-              <a href="">Sản phẩm giảm giá  </a>
+              <a href="#">Sản phẩm giảm giá</a>
             </div>
           </div>
         </div>
@@ -70,10 +81,14 @@ const Header = () => {
         <div className="img-logo"><img src="/images/logo.png" alt="Dravik Store" /></div>
         <div className="icon-group">
           <span><i className="fas fa-search"></i></span>
-          <span className="cart"><i className="fas fa-shopping-cart"></i><span className="badge">3</span></span>
+          <span className="cart">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="badge">3</span>
+          </span>
         </div>
       </div>
-      {/* SIDEBAR/OFFCANVAS MENU */}
+
+      {/* SIDEBAR MOBILE MENU */}
       <div id="mobileMenu" className="mobile-offcanvas">
         <div className="mobile-menu-header">
           <span className="close-btn" id="closeMobileMenu">&times;</span>
@@ -88,7 +103,9 @@ const Header = () => {
           <Link href="/contact">Liên hệ</Link>
           <a href="#">Sản phẩm giảm giá</a>
           <hr />
-          <a href="#"><i className="fas fa-user"></i> Tài khoản</a>
+          <Link href="/login">
+            <div><i className="fas fa-user"></i> Tài khoản</div>
+          </Link>
           <a href="#"><i className="fas fa-heart"></i> Yêu thích</a>
           <a href="#"><i className="fas fa-file-alt"></i> Đơn hàng</a>
           <a href="#"><i className="fas fa-shopping-cart"></i> Giỏ hàng</a>
@@ -98,6 +115,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
+
       <div id="menuOverlay" className="menu-overlay"></div>
     </>
   );
